@@ -1,0 +1,38 @@
+.skeleton-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.sk-row-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.sk-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.sk-h1 { height: 20px; width: 40%; }
+.sk-h2 { height: 14px; width: 60%; }
+.sk-price { height: 44px; width: 55%; margin: 0.25rem 0; }
+.sk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.625rem;
+}
+.sk-stat { height: 36px; }
+.sk-video { height: 220px; }
+.sk-para { height: 16px; }
+
+@media (max-width: 900px) {
+  .sk-row-top { grid-template-columns: 1fr; }
+}
