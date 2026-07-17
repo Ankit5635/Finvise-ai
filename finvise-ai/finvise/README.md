@@ -186,7 +186,7 @@ FinVise AI provides **understanding**.
 
 # 👨‍💻 Author
 
-**😈 Ankit Bachchhav 😈**
+**😎 Ankit Bachchhav 😎**
 
 🎓 Computer Science Graduate
 
