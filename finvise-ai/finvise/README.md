@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ FinVise AI
+# ⚡ FinVise AI ⚡
 
 ### 🇮🇳 AI-Powered Indian Stock Market Intelligence Platform
 
@@ -32,158 +32,276 @@
 
 </div>
 
----
+🌟 Why FinVise AI?
 
-# ✨ Features
+Traditional stock analysis platforms overwhelm users with technical charts and financial jargon.
 
-| 🚀 Feature | Description |
-|------------|-------------|
-| 📈 Real-Time Stock Analysis | Live NSE & BSE prices using yFinance |
-| 🤖 AI Stock Summary | Llama-3 / Gemini generated investment brief |
-| 📰 Live Market News | Multi-source intelligent news aggregation |
-| 🎬 AI Video Generator | Generates downloadable MP4 stock summaries |
-| 📊 Interactive Dashboard | Modern React interface |
-| ⚡ Lightning Fast | FastAPI backend with async architecture |
-| 🔄 Smart Fallback System | Works even when APIs fail |
-| 📱 Responsive UI | Desktop & Mobile Friendly |
+FinVise AI simplifies investing by combining Artificial Intelligence, real-time market data, and automated video generation into a single platform.
 
----
+Instead of spending hours reading financial news, users receive a concise 90-second AI-generated stock briefing that explains:
 
-# 🎥 Project Preview
+📈 Current stock performance
+📰 Important market news
+💡 Beginner-friendly investment insights
+🎬 Downloadable AI-generated video summary
 
-<p align="center">
+The platform is designed especially for new investors interested in the Indian Stock Market (NSE & BSE).
 
-| Dashboard | AI Brief | Video |
-|-----------|----------|--------|
-| ![](images/dashboard.png) | ![](images/brief.png) | ![](images/video.png) |
+🚀 Key Features
+📈 Live Stock Market Data
+Real-time NSE & BSE stock prices
+OHLC data
+52 Week High/Low
+Market Capitalization
+P/E Ratio
+Dividend Yield
+Trading Volume
+Previous Close
+Daily Price Change
+📰 AI-Powered News Aggregation
 
-</p>
+Instead of relying on one source, FinVise intelligently fetches news using a cascading fallback mechanism.
 
----
+Priority:
 
-# 🏛 System Architecture
+NewsAPI
+      ↓
+Google News RSS
+      ↓
+Economic Times RSS
 
-```text
-                User
-                  │
-                  ▼
-         React Frontend (Vercel)
-                  │
-         REST API Requests
-                  │
-                  ▼
-        FastAPI Backend (Render)
-                  │
-   ┌──────────────┼───────────────┐
-   │              │               │
-   ▼              ▼               ▼
-Stock Data     News APIs      AI Models
-(yFinance)     RSS Feeds     Groq/Gemini
-   │              │               │
-   └──────────────┼───────────────┘
-                  ▼
-          AI Brief Generator
-                  │
-      ┌───────────┴───────────┐
-      ▼                       ▼
-   React UI             Video Generator
-                       (gTTS + MoviePy)
-                  │
-                  ▼
-           Download MP4
-```
+This ensures that the application almost always provides relevant news even when one service is unavailable.
 
----
+🤖 AI Market Brief Generation
 
-# 🎯 Workflow
+FinVise uses Large Language Models to transform raw market data into simple English.
 
-```text
-Search Stock
-      │
-      ▼
-Fetch Live Stock Data
-      │
-      ▼
-Fetch Market News
-      │
-      ▼
-Generate AI Summary
-      │
-      ▼
-Create Voice Narration
-      │
-      ▼
-Generate Video Slides
-      │
-      ▼
-Create MP4 Video
-      │
-      ▼
-Download & Share
-```
+The AI explains:
 
----
+Market movement
+Recent events
+Positive signals
+Risks
+Beginner-friendly explanation
+Educational disclaimer
 
-# 🛠 Tech Stack
+Models supported:
 
-| Frontend | Backend | AI | Video | Deployment |
-|-----------|----------|----|--------|------------|
-| React | FastAPI | Groq | gTTS | Vercel |
-| CSS | Python | Gemini | MoviePy | Render |
-| Axios | Uvicorn | Llama-3 | Pillow | Docker |
+Llama 3 (Groq)
+Gemini 1.5 Flash
+Deterministic fallback engine
+🎬 AI Video Generation
 
----
+One click automatically creates a professional MP4 video.
 
-# ⭐ Highlights
+Pipeline:
 
-- 🇮🇳 Designed specifically for the **Indian Stock Market**
-- 📈 Supports **NSE & BSE**
-- ⚡ AI-generated market insights
-- 🎬 One-click video generation
-- 📱 Beautiful modern UI
-- 🔥 Completely free stack
-- 🚀 Production-ready architecture
-- 🎯 Recruiter portfolio project
+AI Script
+      ↓
+Google Text-to-Speech
+      ↓
+Voice Narration
+      ↓
+Image Slides
+      ↓
+MoviePy Rendering
+      ↓
+MP4 Video
 
----
+Generated video contains
 
-# 📊 Dashboard
+Voice narration
+Dynamic slides
+Stock information
+AI explanation
+Download button
+📊 Dashboard Modules
+🏠 Home Dashboard
 
-(Add your screenshots here)
+Displays
 
-```
-📸 dashboard.png
+Live Stock Price
+Daily Change
+Market Cap
+52 Week Range
+Volume
+P/E Ratio
+📰 News Section
 
-📸 stock-analysis.png
+Displays
 
-📸 ai-summary.png
+Latest Headlines
+Source
+Published Date
+News Summary
+Direct Article Link
+🤖 AI Analysis
 
-📸 video-preview.png
-```
+Includes
 
----
+Hook
+Stock Snapshot
+Market News
+Investment Insight
+Educational Conclusion
+🎥 Video Generator
 
-# 📈 Future Roadmap
+Allows users to
 
-- ✅ Portfolio Tracking
-- ✅ Watchlist
-- ✅ Live Candlestick Charts
-- ✅ WhatsApp Sharing
-- ✅ Telegram Bot
-- ✅ AI Chat Assistant
-- ✅ Multi-language Voice
-- ✅ Technical Indicators
-- ✅ Stock Comparison
-- ✅ User Authentication
+Generate Video
+Monitor Progress
+Download MP4
+Replay Video
+📐 System Design
+                    User
+                     │
+                     ▼
+          React Frontend (Vercel)
+                     │
+                     ▼
+         FastAPI REST API (Render)
+                     │
+      ┌──────────────┼─────────────┐
+      ▼              ▼             ▼
+ yFinance        News Sources     AI Models
+      │              │             │
+      └──────────────┼─────────────┘
+                     ▼
+           AI Brief Generator
+                     │
+          Background Task Queue
+                     │
+        ┌────────────┼────────────┐
+        ▼            ▼            ▼
+      gTTS        Pillow      MoviePy
+        │            │            │
+        └────────────┼────────────┘
+                     ▼
+              MP4 Video Output
+⚡ Performance Features
+Asynchronous FastAPI Backend
+Background Video Generation
+Automatic API Failover
+Lightweight React Frontend
+No Paid APIs Required
+Free Tier Deployment
+Modular Architecture
+Scalable REST APIs
+🔐 Error Handling
 
----
+FinVise gracefully handles failures.
 
-<div align="center">
+Error	Solution
+Invalid Stock	User-friendly error
+News API Failure	RSS fallback
+AI Failure	Gemini fallback
+Gemini Failure	Static Template
+Video Failure	AI Brief still displayed
+Network Timeout	Retry mechanism
+📈 Future Enhancements
+📊 Technical Indicators
+RSI
+MACD
+EMA
+SMA
+Bollinger Bands
+🤖 Advanced AI
+Portfolio Analysis
+Buy/Sell Signals
+Risk Prediction
+Sentiment Analysis
+Earnings Analysis
+📱 User Features
+Login
+Portfolio
+Watchlist
+Notifications
+Email Alerts
+🌍 Deployment
+Docker
+Kubernetes
+AWS
+Azure
+CI/CD Pipeline
+GitHub Actions
+📡 API Integrations
+Alpha Vantage
+Twelve Data
+Finnhub
+Polygon.io
+NSE Official APIs
+📊 Project Statistics
+Metric	Details
+Frontend	React 18
+Backend	FastAPI
+Programming Language	Python
+AI Models	Groq + Gemini
+Video Engine	MoviePy
+Voice Engine	gTTS
+Charts	Recharts
+Deployment	Vercel + Render
+Database	Optional
+APIs Used	5+
+🎯 Learning Outcomes
 
-## ⭐ If you like this project, give it a Star ⭐
+This project demonstrates practical experience with:
 
-### Built with ❤️ by **Ankit Bachchhav**
+Full Stack Development
+REST API Development
+Artificial Intelligence
+Large Language Models
+Computer Automation
+Video Processing
+Cloud Deployment
+Docker
+Async Programming
+API Integration
+Error Handling
+React Development
+FastAPI Development
+Production Architecture
+💼 Resume Highlights
 
-**AI • Python • FastAPI • React • Machine Learning**
+This project showcases expertise in:
 
-</div>
+✅ Artificial Intelligence
+✅ Machine Learning Integration
+✅ Full Stack Development
+✅ React.js
+✅ FastAPI
+✅ REST APIs
+✅ Cloud Deployment
+✅ Docker
+✅ Video Automation
+✅ API Integration
+✅ Data Visualization
+✅ Software Architecture
+🌍 Real-World Applications
+Stock Market Education
+Financial News Automation
+AI Content Generation
+Investment Research
+FinTech Platforms
+Robo Advisors
+Portfolio Analysis
+Wealth Management
+Financial Journalism
+AI Video Generation
+📞 Contact
+👨‍💻 Author
+
+Ankit Bachchhav 😈
+
+🎓 Computer Science Graduate
+
+💻 AI/ML Engineer | Python Developer | Full Stack Developer
+
+💼 LinkedIn: https://www.linkedin.com/in/ankitbachchhav2003
+
+🐙 GitHub: https://github.com/Ankit5635
+
+⭐ Support the Project
+
+If you found FinVise AI useful, please consider giving it a ⭐ Star on GitHub.
+
+It helps others discover the project and supports future development.
