@@ -2,7 +2,7 @@
 
 # ⚡ FinVise AI ⚡
 
-### 🇮🇳 AI-Powered Indian Stock Market Intelligence Platform
+### AI-Powered Indian Stock Market Intelligence Platform
 
 <p align="center">
 
